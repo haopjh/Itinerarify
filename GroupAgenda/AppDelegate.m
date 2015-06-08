@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "Agenda.h"
+#import "Item.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +19,103 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+//    [self runFixtureData];
+
+    
+    //    #95b8ca
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:149.0/255.0 green:184.0/255.0 blue:202.0/255.0 alpha:1]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     return YES;
+}
+
+- (void)runFixtureData {
+    NSManagedObjectContext *context = [self managedObjectContext];
+    
+    Agenda *agenda2 = [NSEntityDescription
+                      insertNewObjectForEntityForName:@"Agenda"
+                      inManagedObjectContext:context];
+    agenda2.name = @"New Zealand 2015";
+    
+    Item *item11 = [NSEntityDescription
+                   insertNewObjectForEntityForName:@"Item"
+                   inManagedObjectContext:context];
+    item11.name = @"Visit Land of Hobbiton";
+    
+    Item *item12 = [NSEntityDescription
+                    insertNewObjectForEntityForName:@"Item"
+                    inManagedObjectContext:context];
+    item12.name = @"Stand at the top of Sky Tower and scream!";
+    
+    Item *item13 = [NSEntityDescription
+                    insertNewObjectForEntityForName:@"Item"
+                    inManagedObjectContext:context];
+    item13.name = @"Visit Tower of Sauron";
+    
+    Item *item14 = [NSEntityDescription
+                    insertNewObjectForEntityForName:@"Item"
+                    inManagedObjectContext:context];
+    item14.name = @"Go snorkling at the Bay of Island";
+    
+    NSSet *items2 = [NSSet setWithObjects:item11, item12, item13, item14, nil];
+    
+    [agenda2 addItems:items2];
+    
+    Agenda *agenda = [NSEntityDescription
+                      insertNewObjectForEntityForName:@"Agenda"
+                      inManagedObjectContext:context];
+    agenda.name = @"Japan 2016";
+    
+    Item *item1 = [NSEntityDescription
+                   insertNewObjectForEntityForName:@"Item"
+                   inManagedObjectContext:context];
+    item1.name = @"Visit Hokkaido";
+    
+    Item *item2 = [NSEntityDescription
+                   insertNewObjectForEntityForName:@"Item"
+                   inManagedObjectContext:context];
+    item2.name = @"Visit Raman Place";
+    
+    NSSet *items = [NSSet setWithObjects:item1, item2, nil];
+    
+    [agenda addItems:items];
+    
+    Agenda *agenda3 = [NSEntityDescription
+                      insertNewObjectForEntityForName:@"Agenda"
+                      inManagedObjectContext:context];
+    agenda3.name = @"Singapura, Oh Singapura";
+    
+    Item *item21 = [NSEntityDescription
+                   insertNewObjectForEntityForName:@"Item"
+                   inManagedObjectContext:context];
+    item21.name = @"Eat Serangoon Garden's Hokkien Mee";
+    
+    Item *item22 = [NSEntityDescription
+                   insertNewObjectForEntityForName:@"Item"
+                   inManagedObjectContext:context];
+    item22.name = @"Visit 2 Jalan Chulek and play with Truffles and Pudding the doggies!";
+    
+    NSSet *items3 = [NSSet setWithObjects:item21, item22, nil];
+    
+    [agenda3 addItems:items3];
+    
+    NSError *error;
+    if (![context save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    }
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Agenda" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    for (Agenda *agenda in fetchedObjects) {
+        NSLog(@"Name of Agenda: %@", agenda.name);
+        NSSet *items = agenda.items;
+        for (Item *item in items) {
+            NSLog(@"Name of item: %@", item.name);
+        }
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -74,10 +172,14 @@
     // Create the coordinator and store
     
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
+    NSDictionary *options = @{
+                              NSMigratePersistentStoresAutomaticallyOption : @YES,
+                              NSInferMappingModelAutomaticallyOption : @YES
+                              };
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"GroupAgenda.sqlite"];
     NSError *error = nil;
     NSString *failureReason = @"There was an error creating or loading the application's saved data.";
-    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error]) {
         // Report any error we got.
         NSMutableDictionary *dict = [NSMutableDictionary dictionary];
         dict[NSLocalizedDescriptionKey] = @"Failed to initialize the application's saved data";

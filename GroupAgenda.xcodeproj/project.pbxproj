@@ -7,14 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C42A7A641B243A6900BADC63 /* AddMapItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C42A7A631B243A6900BADC63 /* AddMapItemViewController.m */; };
+		C42A7A661B243DC400BADC63 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C42A7A651B243DC400BADC63 /* MapKit.framework */; };
+		C42A7A6B1B244BE400BADC63 /* CustomAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C42A7A6A1B244BE400BADC63 /* CustomAnnotation.m */; };
 		C44EEBAA1B1C29B7001900BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C44EEBA91B1C29B7001900BA /* main.m */; };
 		C44EEBAD1B1C29B7001900BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C44EEBAC1B1C29B7001900BA /* AppDelegate.m */; };
-		C44EEBB01B1C29B7001900BA /* GroupAgenda.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C44EEBAE1B1C29B7001900BA /* GroupAgenda.xcdatamodeld */; };
-		C44EEBB31B1C29B7001900BA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C44EEBB21B1C29B7001900BA /* ViewController.m */; };
 		C44EEBB61B1C29B7001900BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C44EEBB41B1C29B7001900BA /* Main.storyboard */; };
 		C44EEBB81B1C29B7001900BA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C44EEBB71B1C29B7001900BA /* Images.xcassets */; };
 		C44EEBBB1B1C29B7001900BA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C44EEBB91B1C29B7001900BA /* LaunchScreen.xib */; };
 		C44EEBC71B1C29B7001900BA /* GroupAgendaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C44EEBC61B1C29B7001900BA /* GroupAgendaTests.m */; };
+		C46D85A21B1F395700069F52 /* AddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C46D85A11B1F395700069F52 /* AddItemViewController.m */; };
+		C46D85A41B1F599900069F52 /* GroupAgenda.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C44EEBAE1B1C29B7001900BA /* GroupAgenda.xcdatamodeld */; };
+		C4CC456D1B1DE32D00ECB92D /* AgendaTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CC456C1B1DE32D00ECB92D /* AgendaTableViewController.m */; };
+		C4CC45791B1DE63B00ECB92D /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CC45781B1DE63B00ECB92D /* Item.m */; };
+		C4CC457F1B1DE65900ECB92D /* Agenda.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CC457E1B1DE65900ECB92D /* Agenda.m */; };
+		C4CC45861B1DF46600ECB92D /* ItemCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CC45851B1DF46600ECB92D /* ItemCollectionViewController.m */; };
+		C4CC458D1B1DFC8F00ECB92D /* ItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CC458C1B1DFC8F00ECB92D /* ItemCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,20 +36,36 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C42A7A621B243A6900BADC63 /* AddMapItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMapItemViewController.h; sourceTree = "<group>"; };
+		C42A7A631B243A6900BADC63 /* AddMapItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMapItemViewController.m; sourceTree = "<group>"; };
+		C42A7A651B243DC400BADC63 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C42A7A691B244BE400BADC63 /* CustomAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnnotation.h; sourceTree = "<group>"; };
+		C42A7A6A1B244BE400BADC63 /* CustomAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotation.m; sourceTree = "<group>"; };
 		C44EEBA41B1C29B7001900BA /* GroupAgenda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupAgenda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C44EEBA81B1C29B7001900BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C44EEBA91B1C29B7001900BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C44EEBAB1B1C29B7001900BA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C44EEBAC1B1C29B7001900BA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C44EEBAF1B1C29B7001900BA /* GroupAgenda.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GroupAgenda.xcdatamodel; sourceTree = "<group>"; };
-		C44EEBB11B1C29B7001900BA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C44EEBB21B1C29B7001900BA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C44EEBAF1B1C29B7001900BA /* GroupAgenda.xcdatamodel */ = {isa = PBXFileReference; explicitFileType = wrapper.xcdatamodel; path = GroupAgenda.xcdatamodel; sourceTree = "<group>"; };
 		C44EEBB51B1C29B7001900BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C44EEBB71B1C29B7001900BA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C44EEBBA1B1C29B7001900BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C44EEBC01B1C29B7001900BA /* GroupAgendaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GroupAgendaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C44EEBC51B1C29B7001900BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C44EEBC61B1C29B7001900BA /* GroupAgendaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupAgendaTests.m; sourceTree = "<group>"; };
+		C46D85A01B1F395700069F52 /* AddItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddItemViewController.h; sourceTree = "<group>"; };
+		C46D85A11B1F395700069F52 /* AddItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddItemViewController.m; sourceTree = "<group>"; };
+		C46D85A31B1F58D200069F52 /* GroupAgenda v0.2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "GroupAgenda v0.2.xcdatamodel"; sourceTree = "<group>"; };
+		C4CC456B1B1DE32D00ECB92D /* AgendaTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaTableViewController.h; sourceTree = "<group>"; };
+		C4CC456C1B1DE32D00ECB92D /* AgendaTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaTableViewController.m; sourceTree = "<group>"; };
+		C4CC45771B1DE63B00ECB92D /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Item.h; path = ../Item.h; sourceTree = "<group>"; };
+		C4CC45781B1DE63B00ECB92D /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Item.m; path = ../Item.m; sourceTree = "<group>"; };
+		C4CC457D1B1DE65900ECB92D /* Agenda.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Agenda.h; path = ../Agenda.h; sourceTree = "<group>"; };
+		C4CC457E1B1DE65900ECB92D /* Agenda.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Agenda.m; path = ../Agenda.m; sourceTree = "<group>"; };
+		C4CC45841B1DF46600ECB92D /* ItemCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemCollectionViewController.h; sourceTree = "<group>"; };
+		C4CC45851B1DF46600ECB92D /* ItemCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCollectionViewController.m; sourceTree = "<group>"; };
+		C4CC458B1B1DFC8F00ECB92D /* ItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemCollectionViewCell.h; sourceTree = "<group>"; };
+		C4CC458C1B1DFC8F00ECB92D /* ItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C42A7A661B243DC400BADC63 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +90,7 @@
 		C44EEB9B1B1C29B7001900BA = {
 			isa = PBXGroup;
 			children = (
+				C42A7A651B243DC400BADC63 /* MapKit.framework */,
 				C44EEBA61B1C29B7001900BA /* GroupAgenda */,
 				C44EEBC31B1C29B7001900BA /* GroupAgendaTests */,
 				C44EEBA51B1C29B7001900BA /* Products */,
@@ -83,10 +109,10 @@
 		C44EEBA61B1C29B7001900BA /* GroupAgenda */ = {
 			isa = PBXGroup;
 			children = (
+				C4CC45801B1DE68B00ECB92D /* Model */,
+				C4CC45871B1DF46C00ECB92D /* Controller */,
 				C44EEBAB1B1C29B7001900BA /* AppDelegate.h */,
 				C44EEBAC1B1C29B7001900BA /* AppDelegate.m */,
-				C44EEBB11B1C29B7001900BA /* ViewController.h */,
-				C44EEBB21B1C29B7001900BA /* ViewController.m */,
 				C44EEBB41B1C29B7001900BA /* Main.storyboard */,
 				C44EEBB71B1C29B7001900BA /* Images.xcassets */,
 				C44EEBB91B1C29B7001900BA /* LaunchScreen.xib */,
@@ -120,6 +146,36 @@
 				C44EEBC51B1C29B7001900BA /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C4CC45801B1DE68B00ECB92D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C4CC457D1B1DE65900ECB92D /* Agenda.h */,
+				C4CC457E1B1DE65900ECB92D /* Agenda.m */,
+				C4CC45771B1DE63B00ECB92D /* Item.h */,
+				C4CC45781B1DE63B00ECB92D /* Item.m */,
+				C4CC458B1B1DFC8F00ECB92D /* ItemCollectionViewCell.h */,
+				C4CC458C1B1DFC8F00ECB92D /* ItemCollectionViewCell.m */,
+				C42A7A691B244BE400BADC63 /* CustomAnnotation.h */,
+				C42A7A6A1B244BE400BADC63 /* CustomAnnotation.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		C4CC45871B1DF46C00ECB92D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C4CC456B1B1DE32D00ECB92D /* AgendaTableViewController.h */,
+				C4CC456C1B1DE32D00ECB92D /* AgendaTableViewController.m */,
+				C4CC45841B1DF46600ECB92D /* ItemCollectionViewController.h */,
+				C4CC45851B1DF46600ECB92D /* ItemCollectionViewController.m */,
+				C46D85A01B1F395700069F52 /* AddItemViewController.h */,
+				C46D85A11B1F395700069F52 /* AddItemViewController.m */,
+				C42A7A621B243A6900BADC63 /* AddMapItemViewController.h */,
+				C42A7A631B243A6900BADC63 /* AddMapItemViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +227,11 @@
 				TargetAttributes = {
 					C44EEBA31B1C29B7001900BA = {
 						CreatedOnToolsVersion = 6.3.2;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					C44EEBBF1B1C29B7001900BA = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -222,10 +283,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4CC45791B1DE63B00ECB92D /* Item.m in Sources */,
+				C4CC458D1B1DFC8F00ECB92D /* ItemCollectionViewCell.m in Sources */,
 				C44EEBAD1B1C29B7001900BA /* AppDelegate.m in Sources */,
-				C44EEBB01B1C29B7001900BA /* GroupAgenda.xcdatamodeld in Sources */,
-				C44EEBB31B1C29B7001900BA /* ViewController.m in Sources */,
+				C4CC456D1B1DE32D00ECB92D /* AgendaTableViewController.m in Sources */,
+				C46D85A41B1F599900069F52 /* GroupAgenda.xcdatamodeld in Sources */,
+				C42A7A6B1B244BE400BADC63 /* CustomAnnotation.m in Sources */,
+				C46D85A21B1F395700069F52 /* AddItemViewController.m in Sources */,
 				C44EEBAA1B1C29B7001900BA /* main.m in Sources */,
+				C4CC457F1B1DE65900ECB92D /* Agenda.m in Sources */,
+				C42A7A641B243A6900BADC63 /* AddMapItemViewController.m in Sources */,
+				C4CC45861B1DF46600ECB92D /* ItemCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +490,7 @@
 				C44EEBCC1B1C29B7001900BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C44EEBCD1B1C29B7001900BA /* Build configuration list for PBXNativeTarget "GroupAgendaTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +499,7 @@
 				C44EEBCF1B1C29B7001900BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
@@ -437,9 +507,10 @@
 		C44EEBAE1B1C29B7001900BA /* GroupAgenda.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				C46D85A31B1F58D200069F52 /* GroupAgenda v0.2.xcdatamodel */,
 				C44EEBAF1B1C29B7001900BA /* GroupAgenda.xcdatamodel */,
 			);
-			currentVersion = C44EEBAF1B1C29B7001900BA /* GroupAgenda.xcdatamodel */;
+			currentVersion = C46D85A31B1F58D200069F52 /* GroupAgenda v0.2.xcdatamodel */;
 			path = GroupAgenda.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
