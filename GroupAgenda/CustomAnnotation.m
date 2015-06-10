@@ -7,6 +7,7 @@
 //
 
 #import "CustomAnnotation.h"
+#import "AddMapItemViewController.h"
 
 @implementation CustomAnnotation
 
@@ -22,7 +23,6 @@
 }
 
 
-
 - (MKAnnotationView *)annotationView {
     MKAnnotationView *annotationView = [[MKAnnotationView alloc] initWithAnnotation:self reuseIdentifier:@"CustomAnnotation"];
     
@@ -34,15 +34,16 @@
     
     //Added a button to add to itinerary
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeContactAdd];
-    [rightButton addTarget:nil action: @selector(hello:) forControlEvents:UIControlEventTouchUpInside];
+    [rightButton addTarget:nil action:nil forControlEvents:UIControlEventTouchUpInside];
     annotationView.leftCalloutAccessoryView = rightButton;
     
     
     return annotationView;
 }
 
-- (void) hello:(id) sender {
-    NSLog(@"asda");
+- (void) addMapObject:(id) sender {
+    
 }
+
 
 @end

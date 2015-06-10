@@ -67,6 +67,7 @@ static NSString * const reuseIdentifier = @"Cell";
     cell.nameLabel.text = item.name;
     cell.detailsLabel.text = item.details;
     cell.locationLabel.text = item.location;
+    NSLog(@"%@",item.location);
     double timestamp = [item.timestamp_start doubleValue];
     if (timestamp > 0) {
         //Formates the date here
@@ -105,31 +106,34 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue {
-//    AddItemViewController *source = [segue sourceViewController];
-//    if(source.name && [source.name length] > 0) {
-//        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-//        NSManagedObjectContext *context = [appDelegate managedObjectContext];
-//        Item *item = [NSEntityDescription
-//                        insertNewObjectForEntityForName:@"Item"
-//                      inManagedObjectContext:context];
-//        item.name = source.name;
-//        item.details = source.details;
-//        item.location = source.name;
-//        item.timestamp_created = source.timestampCreated;
-//        item.timestamp_start = source.timestampStart;
-//        //Adds to agenda's itemlist
-//        [self.agenda addItemsObject:item];
-//        NSError *error;
-//        if (![context save:&error]) {
-//            NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-//        }
-//        //Adds to itemList on collectionview
-//        [self.itemList addObject:item];
-//        
-//        [self.collectionView reloadData];
-//    } else {
-//        NSLog(@"No items recieved");
-//    }
+    if([[segue sourceViewController] isKindOfClass:[AddItemViewController class]]) {
+        
+        AddItemViewController *source = [segue sourceViewController];
+        if(source.name && [source.name length] > 0) {
+            AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+            NSManagedObjectContext *context = [appDelegate managedObjectContext];
+            Item *item = [NSEntityDescription
+                          insertNewObjectForEntityForName:@"Item"
+                          inManagedObjectContext:context];
+            item.name = source.name;
+            item.details = source.details;
+            item.location = source.location;
+            item.timestamp_created = source.timestampCreated;
+            item.timestamp_start = source.timestampStart;
+            //Adds to agenda's itemlist
+            [self.agenda addItemsObject:item];
+            NSError *error;
+            if (![context save:&error]) {
+                NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+            }
+            //Adds to itemList on collectionview
+            [self.itemList addObject:item];
+            [self.collectionView reloadData];
+        } else {
+            NSLog(@"No items recieved");
+        }
+
+    }
 }
 
 

@@ -16,6 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //Set name
+    self.nameField.text = self.selectedPin.title;
+    
     // Do any additional setup after loading the view.
     UIDatePicker* picker = [[UIDatePicker alloc] init];
     picker.autoresizingMask = UIViewAutoresizingFlexibleWidth;
@@ -53,6 +56,7 @@
     [dateFormatter setDateFormat:@"MMM dd yyyy, h:mm a"];
     NSDate *date = picker.date;
     self.dateField.text = [dateFormatter stringFromDate:date];
+    self.timestampStart = [NSNumber numberWithInt:[picker.date timeIntervalSince1970]];
 //    self.dateField.text = [[NSNumber numberWithInt:[picker.date timeIntervalSince1970]] stringValue];
 }
 
@@ -67,7 +71,11 @@
     self.name = self.nameField.text;
     self.details = self.detailsField.text;
     
-//    self.timestampStart = [NSNumber numberWithInt:[self.datePicker.date timeIntervalSince1970]];
+    NSMutableString *coordinate = [NSMutableString localizedStringWithFormat:@"%f",self.selectedPin.coordinate.latitude];
+    [coordinate appendString:@","];
+    [coordinate appendString:[NSMutableString localizedStringWithFormat:@"%f",self.selectedPin.coordinate.longitude]];
+    self.location = coordinate;
+    
     self.timestampCreated = [NSNumber numberWithInt:[[NSDate date] timeIntervalSince1970]];
 }
 

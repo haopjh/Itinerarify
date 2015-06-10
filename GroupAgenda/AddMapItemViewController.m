@@ -7,7 +7,7 @@
 //
 
 #import "AddMapItemViewController.h"
-#import "CustomAnnotation.h"
+#import "AddItemViewController.h"
 
 @interface AddMapItemViewController ()
 
@@ -97,6 +97,17 @@
     
     [self.searchBar resignFirstResponder];
 }
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+    
+    if ([(UIButton*)control buttonType] == UIButtonTypeContactAdd){
+        AddItemViewController *detailView = [self.storyboard instantiateViewControllerWithIdentifier:@"AddItemView"];
+        detailView.selectedPin = view.annotation;
+        [[self navigationController] pushViewController:detailView animated:YES];
+
+    }
+}
+
 
 
 /*

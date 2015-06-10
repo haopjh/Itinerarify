@@ -13,7 +13,7 @@
 
 @property (nonatomic,readonly) CLLocationCoordinate2D coordinate;
 @property (copy, nonatomic) NSString *title;
-@property (nonatomic, retain) NSString *subtitle;
+@property (copy, nonatomic) NSString *subtitle;
 
 - (id)initWithMapItem:(MKMapItem *)item;
 - (MKAnnotationView *) annotationView;

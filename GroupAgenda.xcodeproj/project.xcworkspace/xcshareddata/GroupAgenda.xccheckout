@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>2FD35EF2-F3FF-4D0C-B87E-9B3D194D841F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>GroupAgenda</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>CC6D3BB666B8E06C60CE4AFBD366FA155E34F14A</key>
+		<string>https://github.com/haopjh/Itinerarify.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>GroupAgenda.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>CC6D3BB666B8E06C60CE4AFBD366FA155E34F14A</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/haopjh/Itinerarify.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>CC6D3BB666B8E06C60CE4AFBD366FA155E34F14A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CC6D3BB666B8E06C60CE4AFBD366FA155E34F14A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GroupAgenda</string>
+		</dict>
+	</array>
+</dict>
+</plist>
