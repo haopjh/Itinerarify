@@ -70,7 +70,8 @@
         MKMapRect zoomRect = MKMapRectNull;
          CustomAnnotation *annotation;
         for (MKMapItem *item in response.mapItems) {
-            annotation = [[CustomAnnotation alloc] initWithMapItem:item];
+            CLLocationCoordinate2D coordinate = item.placemark.location.coordinate;
+            annotation = [[CustomAnnotation alloc] initWithCoordinate:&coordinate withTitle:item.name withSubTitle:[item.placemark.addressDictionary objectForKey:@"Street"]];
             [self.mapView addAnnotation:annotation];
             
             MKMapPoint annotationPoint = MKMapPointForCoordinate(annotation.coordinate);

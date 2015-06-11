@@ -17,7 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //Set name
-    self.nameField.text = self.selectedPin.title;
+    if(self.selectedPin) {
+        self.nameField.text = self.selectedPin.title;
+    }
     
     // Do any additional setup after loading the view.
     UIDatePicker* picker = [[UIDatePicker alloc] init];

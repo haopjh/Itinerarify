@@ -15,7 +15,7 @@
 @property (copy, nonatomic) NSString *title;
 @property (copy, nonatomic) NSString *subtitle;
 
-- (id)initWithMapItem:(MKMapItem *)item;
+- (id)initWithCoordinate:(CLLocationCoordinate2D *)coordinate withTitle:(NSString *)title withSubTitle:(NSString *)subtitle;
 - (MKAnnotationView *) annotationView;
 
 

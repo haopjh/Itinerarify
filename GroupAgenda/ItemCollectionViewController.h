@@ -16,4 +16,6 @@
 
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue;
 
+- (void)removeItemFromList: (Item *)item;
+
 @end

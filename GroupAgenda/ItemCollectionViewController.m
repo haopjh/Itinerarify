@@ -11,6 +11,7 @@
 #import "ItemCollectionViewCell.h"
 #import "AddItemViewController.h"
 #import "AppDelegate.h"
+#import "ItemViewController.h"
 
 @interface ItemCollectionViewController ()
 
@@ -22,7 +23,6 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -36,7 +36,6 @@ static NSString * const reuseIdentifier = @"Cell";
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 /*
 #pragma mark - Navigation
@@ -67,7 +66,6 @@ static NSString * const reuseIdentifier = @"Cell";
     cell.nameLabel.text = item.name;
     cell.detailsLabel.text = item.details;
     cell.locationLabel.text = item.location;
-    NSLog(@"%@",item.location);
     double timestamp = [item.timestamp_start doubleValue];
     if (timestamp > 0) {
         //Formates the date here
@@ -136,9 +134,21 @@ static NSString * const reuseIdentifier = @"Cell";
     }
 }
 
+- (void)removeItemFromList: (Item *)item {
+    //remove items from itemList on collectionview
+    [self.itemList removeObject:item];
+    [self.collectionView reloadData];
+}
+
 
 #pragma mark <UICollectionViewDelegate>
-
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    Item *item = [self.itemList objectAtIndex:indexPath.row];
+    ItemViewController *itemViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ItemView"];
+    itemViewController.item = item;
+    [self.navigationController pushViewController:itemViewController animated:YES];
+    
+}
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {

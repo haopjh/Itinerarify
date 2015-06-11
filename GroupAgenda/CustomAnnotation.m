@@ -11,12 +11,12 @@
 
 @implementation CustomAnnotation
 
-- (id)initWithMapItem:(MKMapItem *)item {
+- (id)initWithCoordinate:(CLLocationCoordinate2D *)coordinate withTitle:(NSString *)title withSubTitle:(NSString *)subtitle {
     self = [super init];
     if(self) {
-        _title = item.name;
-        _coordinate = item.placemark.location.coordinate;
-        _subtitle = [item.placemark.addressDictionary objectForKey:@"Street"];
+        _title = title;
+        _coordinate = *coordinate;
+        _subtitle = subtitle;
     }
     
     return self;
