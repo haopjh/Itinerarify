@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSLog(@"Enter add item form");
     //Set name
     if(self.selectedPin) {
         self.nameField.text = self.selectedPin.title;

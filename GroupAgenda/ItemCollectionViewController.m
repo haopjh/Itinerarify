@@ -30,6 +30,15 @@ static NSString * const reuseIdentifier = @"Cell";
 //    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
     // Do any additional setup after loading the view.
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Item" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    NSError *error;
+    self.itemList = [NSMutableArray arrayWithArray:[context executeFetchRequest:fetchRequest error:&error]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,15 +46,18 @@ static NSString * const reuseIdentifier = @"Cell";
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if([segue.identifier isEqualToString:@"newItemMap"]) {
+        NSLog(@"Enter create new item");
+    }
 }
-*/
+
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -106,6 +118,8 @@ static NSString * const reuseIdentifier = @"Cell";
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue {
     if([[segue sourceViewController] isKindOfClass:[AddItemViewController class]]) {
         
+        NSLog(@"Adding Item");
+        
         AddItemViewController *source = [segue sourceViewController];
         if(source.name && [source.name length] > 0) {
             AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
@@ -118,8 +132,11 @@ static NSString * const reuseIdentifier = @"Cell";
             item.location = source.location;
             item.timestamp_created = source.timestampCreated;
             item.timestamp_start = source.timestampStart;
+            
+            
+            NSLog(@"Item: %@", item);
             //Adds to agenda's itemlist
-            [self.agenda addItemsObject:item];
+//            [self.agenda addItemsObject:item];
             NSError *error;
             if (![context save:&error]) {
                 NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
@@ -127,6 +144,8 @@ static NSString * const reuseIdentifier = @"Cell";
             //Adds to itemList on collectionview
             [self.itemList addObject:item];
             [self.collectionView reloadData];
+            NSLog(@"ItemList: %@", self.itemList);
+
         } else {
             NSLog(@"No items recieved");
         }

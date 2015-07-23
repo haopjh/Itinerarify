@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "Agenda.h"
 #import "ItemCollectionViewController.h"
+#import "AddAgendaViewController.h"
 
 @interface AgendaTableViewController ()
 
@@ -30,7 +31,7 @@
                                    entityForName:@"Agenda" inManagedObjectContext:context];
     [fetchRequest setEntity:entity];
     NSError *error;
-    self.agendaList = [context executeFetchRequest:fetchRequest error:&error];
+    self.agendaList = [NSMutableArray arrayWithArray:[context executeFetchRequest:fetchRequest error:&error]];
     
     
     
@@ -69,6 +70,33 @@
     return cell;
 }
 
+
+- (IBAction)unwindToList:(UIStoryboardSegue *)segue {
+    if([[segue sourceViewController] isKindOfClass:[AddAgendaViewController class]]) {
+        
+        AddAgendaViewController *source = [segue sourceViewController];
+        if(source.name && [source.name length] > 0) {
+            AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+            NSManagedObjectContext *context = [appDelegate managedObjectContext];
+            Agenda *agenda = [NSEntityDescription
+                          insertNewObjectForEntityForName:@"Agenda"
+                          inManagedObjectContext:context];
+            agenda.name = source.name;
+            agenda.timestamp_created = [NSNumber numberWithInt:[[NSDate date] timeIntervalSince1970]];
+
+            NSError *error;
+            if (![context save:&error]) {
+                NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+            }
+            //Adds to itemList on collectionview
+            [self.agendaList addObject:agenda];
+            [self.tableView reloadData];
+        } else {
+            NSLog(@"No agenda recieved");
+        }
+        
+    }
+}
 
 /*
 // Override to support conditional editing of the table view.
@@ -111,14 +139,18 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-    Agenda *agenda = [self.agendaList objectAtIndex:indexPath.row];
-    NSSet *itemList = agenda.items;
-    NSMutableArray *newItemList = [NSMutableArray arrayWithArray:[itemList allObjects]];
-    
-    [segue.destinationViewController setItemList:newItemList];
-    [segue.destinationViewController setAgenda:agenda];
+    if([segue.identifier isEqualToString:@"enterAgenda"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        Agenda *agenda = [self.agendaList objectAtIndex:indexPath.row];
+        NSSet *itemList = agenda.items;
+        NSMutableArray *newItemList = [NSMutableArray arrayWithArray:[itemList allObjects]];
+        
+        [segue.destinationViewController setItemList:newItemList];
+        [segue.destinationViewController setAgenda:agenda];
+
+    } else if([segue.identifier isEqualToString:@"newAgenda"]) {
+        NSLog(@"Enter create new agenda");
+    }
     
 }
 

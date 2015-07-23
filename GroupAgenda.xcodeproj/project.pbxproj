@@ -19,6 +19,7 @@
 		C46D85A21B1F395700069F52 /* AddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C46D85A11B1F395700069F52 /* AddItemViewController.m */; };
 		C46D85A41B1F599900069F52 /* GroupAgenda.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C44EEBAE1B1C29B7001900BA /* GroupAgenda.xcdatamodeld */; };
 		C4AE5B9D1B29CBF60088EE10 /* ItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AE5B9C1B29CBF60088EE10 /* ItemViewController.m */; };
+		C4AFC6B71B610ED400D20F36 /* AddAgendaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4AFC6B61B610ED400D20F36 /* AddAgendaViewController.m */; };
 		C4CC456D1B1DE32D00ECB92D /* AgendaTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CC456C1B1DE32D00ECB92D /* AgendaTableViewController.m */; };
 		C4CC45791B1DE63B00ECB92D /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CC45781B1DE63B00ECB92D /* Item.m */; };
 		C4CC457F1B1DE65900ECB92D /* Agenda.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CC457E1B1DE65900ECB92D /* Agenda.m */; };
@@ -59,6 +60,8 @@
 		C46D85A31B1F58D200069F52 /* GroupAgenda v0.2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "GroupAgenda v0.2.xcdatamodel"; sourceTree = "<group>"; };
 		C4AE5B9B1B29CBF60088EE10 /* ItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemViewController.h; sourceTree = "<group>"; };
 		C4AE5B9C1B29CBF60088EE10 /* ItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemViewController.m; sourceTree = "<group>"; };
+		C4AFC6B51B610ED400D20F36 /* AddAgendaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAgendaViewController.h; sourceTree = "<group>"; };
+		C4AFC6B61B610ED400D20F36 /* AddAgendaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAgendaViewController.m; sourceTree = "<group>"; };
 		C4CC456B1B1DE32D00ECB92D /* AgendaTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaTableViewController.h; sourceTree = "<group>"; };
 		C4CC456C1B1DE32D00ECB92D /* AgendaTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaTableViewController.m; sourceTree = "<group>"; };
 		C4CC45771B1DE63B00ECB92D /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Item.h; path = ../Item.h; sourceTree = "<group>"; };
@@ -171,6 +174,8 @@
 			children = (
 				C4CC456B1B1DE32D00ECB92D /* AgendaTableViewController.h */,
 				C4CC456C1B1DE32D00ECB92D /* AgendaTableViewController.m */,
+				C4AFC6B51B610ED400D20F36 /* AddAgendaViewController.h */,
+				C4AFC6B61B610ED400D20F36 /* AddAgendaViewController.m */,
 				C4CC45841B1DF46600ECB92D /* ItemCollectionViewController.h */,
 				C4CC45851B1DF46600ECB92D /* ItemCollectionViewController.m */,
 				C46D85A01B1F395700069F52 /* AddItemViewController.h */,
@@ -294,6 +299,7 @@
 				C44EEBAD1B1C29B7001900BA /* AppDelegate.m in Sources */,
 				C4CC456D1B1DE32D00ECB92D /* AgendaTableViewController.m in Sources */,
 				C46D85A41B1F599900069F52 /* GroupAgenda.xcdatamodeld in Sources */,
+				C4AFC6B71B610ED400D20F36 /* AddAgendaViewController.m in Sources */,
 				C42A7A6B1B244BE400BADC63 /* CustomAnnotation.m in Sources */,
 				C46D85A21B1F395700069F52 /* AddItemViewController.m in Sources */,
 				C44EEBAA1B1C29B7001900BA /* main.m in Sources */,

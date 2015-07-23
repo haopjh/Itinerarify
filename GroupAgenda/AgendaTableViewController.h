@@ -10,6 +10,8 @@
 
 @interface AgendaTableViewController : UITableViewController
 
-@property (nonatomic, strong) NSArray *agendaList;
+@property (nonatomic, strong) NSMutableArray *agendaList;
+
+- (IBAction)unwindToList:(UIStoryboardSegue *)segue;
 
 @end
